@@ -1,5 +1,11 @@
 # Inventory-Management-System
 
+## Technologies Used
+
+- Download POSTMAN from this website: https://www.postman.com/downloads/
+- Download VS Code from this website: https://code.visualstudio.com/Download
+
+
 ## Install MongoDB Shell
 
 - Download the mongodb from this website: https://www.mongodb.com/try/download/community (Follow default setup)
@@ -11,14 +17,7 @@
 - Run `mongod` command 
 - Now open a new command prompt and run the same command: `cd C:\Program Files\MongoDB\Server\{version number}\bin` 
 - Run `mongo` command
-
-## Install Postman
-
-- Download POSTMAN from this website: https://www.postman.com/downloads/
-
-## Install VS Code
-
-- Download VS Code from this website: https://code.visualstudio.com/Download
+- Keep both command prompts open throught the 
 
 ## Next Steps
 
