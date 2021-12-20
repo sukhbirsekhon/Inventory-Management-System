@@ -5,7 +5,7 @@
 - Download POSTMAN from this website: https://www.postman.com/downloads/
 - Download VS Code from this website: https://code.visualstudio.com/Download
 
-## Follow these Steps
+## How to run the app
 
 - Clone the github project and run it on your vs code
 - Run `cd backend` command in the terminal
