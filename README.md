@@ -7,9 +7,9 @@
 - Create `data` folder in C: folder (C:\)
 - Inside `data` folder create a new folder with a name of `db`
 - The ultimate path for the `db` folder should be `C:\data\db`
-- Now open command prompt and run this command: `cd C:\Program Files\MongoDB\Server\4.0\bin` 
+- Now open command prompt and run this command: `cd C:\Program Files\MongoDB\Server\4.0\bin` (The version number might be different for you. Find MongoDB folder in your Program Files folder and go to Server -> {version number} -> bin)
 - Run `mongod` command 
-- Now open a new command prompt and run the same command: `cd C:\Program Files\MongoDB\Server\4.0\bin` (The version number might be different for you. Find MongoDB folder in your Program Files folder and go to Server -> {version number} -> bin
+- Now open a new command prompt and run the same command: `cd C:\Program Files\MongoDB\Server\4.0\bin` 
 - Run `mongo` command
 
 ## Install Postman
