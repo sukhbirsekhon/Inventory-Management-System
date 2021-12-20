@@ -17,7 +17,7 @@
 - Run `mongod` command 
 - Now open a new command prompt and run the same command: `cd C:\Program Files\MongoDB\Server\{version number}\bin` 
 - Run `mongo` command
-- Keep both command prompts open throught the 
+- Keep both command prompts open throught the usage of an application
 
 ## Next Steps
 
