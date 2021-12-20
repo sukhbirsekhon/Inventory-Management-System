@@ -4,6 +4,7 @@
 
 - Download POSTMAN from this website: https://www.postman.com/downloads/
 - Download VS Code from this website: https://code.visualstudio.com/Download
+- Download the mongodb from this website: https://www.mongodb.com/try/download/community
 
 
 ## Install MongoDB Shell
