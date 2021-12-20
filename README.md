@@ -21,12 +21,16 @@
 
 ## Next Steps
 
-- Clone the github project
+- Clone the github project and run it on your vs code
 - Run `cd backend` command in the terminal
 - Run `npm install` command in the terminal
+- Run `npm install -g nodemon` in your terminal
 - Run `nodemon app` command in the terminal
-- Check if the app is running on `http://localhost:3000` 
+- Check if the app is running on `http://localhost:3000` /
+- POSTMAN Collections: https://www.getpostman.com/collections/284da6468ca6a9d51671
 - Ping `http://localhost:3000/inventories` with GET header in the Postman (You should get all the current inventory records)
+
+
 
 
 
