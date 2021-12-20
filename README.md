@@ -27,7 +27,7 @@
 - Run `npm install -g nodemon` in your terminal
 - Run `nodemon app` command in the terminal
 - Check if the app is running on `http://localhost:3000` /
-- POSTMAN Collections: https://www.getpostman.com/collections/284da6468ca6a9d51671
+- Import this collection in your POSTMAN: https://www.getpostman.com/collections/284da6468ca6a9d51671 (Copy this link and use it to import the collection)
 - Ping `http://localhost:3000/inventories` with GET header in the Postman (You should get all the current inventory records)
 
 
