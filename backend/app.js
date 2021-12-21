@@ -28,5 +28,10 @@ app.post('/inventories', (req, res) => {
         .catch((error) => console.log(error));    
 });
 
+// app.get('/inventories/:inventoryId', (res, req) => {
+//     Inventory.find({ _id: req.params.inventoryId })
+//     .then((inventory) => res.send(inventory))
+//     .catch((error) => console.log(error));
+// });
 
 app.listen(3000, () => console.log("Server Connected on port 3000"));
