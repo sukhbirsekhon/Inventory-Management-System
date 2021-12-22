@@ -17,7 +17,7 @@
 - Ping `http://localhost:3000/inventories` with GET header in the Postman (You should get all the current inventory records)
 - You can also create records by using `POST Inventories` endpoint 
 
-
-
-
-
+- Now open a new terminal while keeping the first one open on the side and run the command `cd frontend`
+- Run `npm i` command
+- Run `ng serve` command
+- Go to `localhost:4200` and you should see the app running
