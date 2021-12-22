@@ -14,6 +14,9 @@ app.use((req, res, next) => {
     next();
 });
 
+/**
+ * Inventory endpoints
+ */
 app.get('/inventories', (req, res) => {
     Inventory.find({})
     .then(inventories => res.send(inventories))
@@ -28,10 +31,27 @@ app.post('/inventories', (req, res) => {
         .catch((error) => console.log(error));    
 });
 
-// app.get('/inventories/:inventoryId', (res, req) => {
-//     Inventory.find({ _id: req.params.inventoryId })
-//     .then((inventory) => res.send(inventory))
-//     .catch((error) => console.log(error));
-// });
+app.get('/inventories/:inventoryId', (req, res) => {
+    Inventory.find({ _id: req.params.inventoryId })
+    .then((inventory) => res.send(inventory))
+    .catch((error) => console.log(error));
+});
+
+/**
+ * Product endpoints
+ */
+app.get('/inventories/:inventoryId/products', (req, res) => {
+    Product.find({ _inventoryId: req.params.inventoryId })
+    .then((products) => res.send(products))
+    .catch((error) => console.log(error));
+});
+
+app.post('/inventories/:inventoryId/products', (req, res) => {
+    (new Product({
+        'productName': req.body.productName, '_inventoryId': req.params.inventoryId }))
+        .save()
+        .then((product) => res.send(product))
+        .catch((error) => console.log(error)); 
+});
 
 app.listen(3000, () => console.log("Server Connected on port 3000"));

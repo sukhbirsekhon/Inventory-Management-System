@@ -7,7 +7,7 @@ const ProductSchema = new mongoose.Schema({
         minlength: 3,
         required: true
     },
-    productId: {
+    _inventoryId: {
         type: mongoose.Types.ObjectId,
         required: true
     }

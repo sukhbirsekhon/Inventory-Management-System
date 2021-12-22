@@ -1,0 +1,21 @@
+Inventory List:
+<div class="list-menu">
+    <a href="#" class="list-menu-item" *ngFor="let inventory of inventories">
+        <ul class="list-group">
+            <li class="list-group-item">{{ inventory.inventoryName }}</li>
+        </ul>
+    </a>
+</div>
+<br/>
+
+Product List: 
+<div class="list-menu">
+    <a href="#" class="list-menu-item" *ngFor="let product of products">
+        <ul class="list-group">
+            <li class="list-group-item">{{ product.productName }}</li>
+        </ul>
+    </a>
+</div>
+<br/>
+
+<button class="btn btn-primary btn-rounded-corners">Add Products</button>
