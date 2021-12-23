@@ -40,7 +40,7 @@ app.get('/inventories/:inventoryId', (req, res) => {
 });
 
 /**
- * Product endpoints
+ * Product endpoints 
  */
 app.get('/inventories/:inventoryId/products', (req, res) => {
     Product.find({ _inventoryId: req.params.inventoryId })
