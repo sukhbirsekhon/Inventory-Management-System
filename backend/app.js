@@ -5,6 +5,8 @@ const mongoose = require('./database/mongoose');
 const Inventory = require('./database/models/inventory');
 const Product = require('./database/models/product');
 
+const port = process.env.PORT || 3000;
+
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -54,4 +56,4 @@ app.post('/inventories/:inventoryId/products', (req, res) => {
         .catch((error) => console.log(error)); 
 });
 
-app.listen(3000, () => console.log("Server Connected on port 3000"));
+app.listen(port, () => console.log("Server Connected on port " + port));
