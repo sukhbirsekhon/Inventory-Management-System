@@ -6,7 +6,6 @@ const routes: Routes = [
   { path: '', component: DashboardComponent},
   { path: 'inventories/:inventoryId', component: DashboardComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
