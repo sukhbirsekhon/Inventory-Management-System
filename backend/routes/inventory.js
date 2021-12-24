@@ -11,7 +11,8 @@ router.get('/inventories', (req, res) => {
 
 router.post('/inventories', (req, res) => {
     (new Inventory({
-        'inventoryName': req.body.inventoryName }))
+        'inventoryName': req.body.inventoryName, 
+        'inventoryDesc': req.body.inventoryDesc }))
         .save()
         .then((inventory) => res.send(inventory))
         .catch((error) => console.log(error));    

@@ -6,6 +6,12 @@ const InventorySchema = new mongoose.Schema({
         trim: true,
         minlength: 3,
         required: true
+    },
+    inventoryDesc: {
+        type: String, 
+        trim: true, 
+        minlength: 3,
+        required: true
     }
 });
 
