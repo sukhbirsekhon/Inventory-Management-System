@@ -25,3 +25,12 @@
 - Run `ng serve` command
 - Note: If `ng` command doesn't work then run this command `npm i -g ng` and then run the command `ng serve`
 - Go to `localhost:4200` and you should see the app running
+
+## Steps to deploy the app on heroku (Applies to Front-end only)
+
+- Make changes
+- Run `cd frontend`
+- Run `ng build`  
+- Run `git add .`
+- Run `git commit -m "Message"`
+- Run `git push heroku master`
