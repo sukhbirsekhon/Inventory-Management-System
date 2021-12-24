@@ -11,10 +11,23 @@ const Product = require('../database/models/product');
 
 router.post('/inventories/:inventoryId/products', (req, res) => {
     (new Product({
-        'productName': req.body.productName, '_inventoryId': req.params.inventoryId }))
+        'productName': req.body.productName, 
+        'productBrand': req.body.productBrand,
+        'productDesc': req.body.productDesc, 
+        'productSizeUnit': req.body.productSizeUnit,
+        'productSize': req.body.productSize,
+        'productFavorite': req.body.productFavorite,
+        'productUniqueId': req.body.productUniqueId,
+        '_inventoryId': req.params.inventoryId }))
         .save()
         .then((product) => res.send(product))
         .catch((error) => console.log(error)); 
+});
+
+router.get('/inventories/:inventoryId/products/:productId', (req, res) => {
+    Product.find({ _id: req.params.productId })
+    .then((product) => res.send(product))
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;
