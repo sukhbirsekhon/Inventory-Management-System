@@ -1,8 +1,14 @@
 const express = require('express')
 const app = express();
+const http = require('http');
 const mongoose = require('./database/mongoose');
 
 const port = process.env.PORT || 3000;
+
+app.get('/', function (req, res) {
+    res.send('This is a backend API server for the Inventory Management System. The app is running on http://ims39.herokuapp.com');
+});
+
 
 app.use(express.json());
 
