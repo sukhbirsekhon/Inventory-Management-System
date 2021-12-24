@@ -6,7 +6,6 @@
 - Download VS Code from this website: https://code.visualstudio.com/Download
 - Download Git from here: https://git-scm.com/downloads
 - Download node from here: https://nodejs.org/en/download/
-- 
 
 ## How to run the app
 
@@ -31,6 +30,14 @@
 - Make changes
 - Run `cd frontend`
 - Run `ng build`  
+- Run `git add .`
+- Run `git commit -m "Message"`
+- Run `git push heroku master`
+
+## Steps to deploy the app on heroku (Applies to Front-end only)
+
+- Make changes
+- Run `cd backend`
 - Run `git add .`
 - Run `git commit -m "Message"`
 - Run `git push heroku master`
