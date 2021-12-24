@@ -1,18 +1,20 @@
-Inventory List:
+<p>Inventory List:</p>
 <div class="list-menu">
     <a href="#" class="list-menu-item" *ngFor="let inventory of inventories">
         <ul class="list-group">
-            <li class="list-group-item">{{ inventory.inventoryName }}</li>
+            <li class="list-group-item">Name: <b>{{ inventory.inventoryName }}</b> | Description: <b>{{ inventory.inventoryDesc }}</b></li>
         </ul>
     </a>
 </div>
 <br/>
 
-Product List: 
+<p>Product List:</p>
 <div class="list-menu">
     <a href="#" class="list-menu-item" *ngFor="let product of products">
         <ul class="list-group">
-            <li class="list-group-item">{{ product.productName }}</li>
+            <li class="list-group-item">Name: <b>{{ product.productName }}</b> | Brand: <b>{{ product.productBrand }}</b>
+                | Description: <b>{{ product.productDesc }}</b> | SizeUnit: <b>{{ product.productSizeUnit }}</b>
+                | Size: <b>{{ product.productSize }}</b> | UniqueId: <b>{{ product.productUniqueId }}</b> | Favorite: <b>{{ product.productFavorite }}</b></li>
         </ul>
     </a>
 </div>
