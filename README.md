@@ -1,9 +1,12 @@
 # Inventory-Management-System
 
-## Technologies Used
+## Technologies Need to run the app
 
 - Download POSTMAN from this website: https://www.postman.com/downloads/
 - Download VS Code from this website: https://code.visualstudio.com/Download
+- Download Git from here: https://git-scm.com/downloads
+- Download node from here: https://nodejs.org/en/download/
+- 
 
 ## How to run the app
 
@@ -20,4 +23,5 @@
 - Now open a new terminal while keeping the first one open on the side and run the command `cd frontend`
 - Run `npm i` command
 - Run `ng serve` command
+- Note: If `ng` command doesn't work then run this command `npm i -g ng` and then run the command `ng serve`
 - Go to `localhost:4200` and you should see the app running
