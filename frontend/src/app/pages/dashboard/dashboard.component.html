@@ -1,3 +1,13 @@
+<p>Users List:</p>
+<div class="list-menu">
+    <a href="#" class="list-menu-item" *ngFor="let user of users">
+        <ul class="list-group">
+            <li class="list-group-item">Username: <b>{{ user.username }}</b> | Email: <b>{{ user.email }}</b> | Password: <b>{{ user.password }}</b></li>
+        </ul>
+    </a>
+</div>
+<br/>
+
 <p>Inventory List:</p>
 <div class="list-menu">
     <a href="#" class="list-menu-item" *ngFor="let inventory of inventories">
