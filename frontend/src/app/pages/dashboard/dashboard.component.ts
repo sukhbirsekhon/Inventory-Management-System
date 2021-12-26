@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
     .subscribe((inventories) => this.inventories = inventories as Inventory[]);
 
     this.route.params.subscribe((params: Params) => {
-      console.log("params");
       const inventoryId = "61c276086a705debc62ec37c";
       if (!inventoryId) return;
       this.productService.getProducts(inventoryId)
