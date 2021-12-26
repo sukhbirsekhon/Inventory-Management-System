@@ -6,8 +6,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class WebService {
   readonly ROOT_URL;
-  constructor(private http: HttpClient) { 
-    this.ROOT_URL = "http://localhost:3000";
+  constructor(private http: HttpClient) {
+    this.ROOT_URL = "http://ims-back.herokuapp.com";
   }
 
   get(uri: string) {
