@@ -10,8 +10,10 @@ export class WebService {
   constructor(private http: HttpClient) {
     if(environment.production) {
       this.ROOT_URL = "http://ims-back.herokuapp.com";
+      console.log('Prod server is running');
     } else {
       this.ROOT_URL = "http://localhost:3000";
+      console.log('Dev server is running');
     }
 
   }
