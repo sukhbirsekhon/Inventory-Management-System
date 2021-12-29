@@ -25,12 +25,15 @@ export class DashboardComponent implements OnInit {
     this.productService.getInventories()
     .subscribe((inventories) => this.inventories = inventories as Inventory[]);
 
-    this.route.params.subscribe((params: Params) => {
-      const inventoryId = "61c276086a705debc62ec37c";
-      if (!inventoryId) return;
-      this.productService.getProducts(inventoryId)
-          .subscribe((products) => this.products = products as Product[]);
-    });
+    this.productService.getProducts()
+    .subscribe((products) => this.products = products as Product[]);
+
+    // this.route.params.subscribe((params: Params) => {
+    //   const inventoryId = "61c276086a705debc62ec37c";
+    //   if (!inventoryId) return;
+    //   this.productService.getProducts(inventoryId)
+    //       .subscribe((products) => this.products = products as Product[]);
+    // });
 
     this.productService.getUsers()
     .subscribe((users) => this.users = users as User[]);

@@ -32,7 +32,11 @@ export class ProductService {
     return this.webService.get(`inventories/${inventoryId}`);
   }
 
-  getProducts(inventoryId: string) {
+  getProducts() {
+    return this.webService.get(`products`);
+  }
+
+  getProductsByInventoryId(inventoryId: string) {
     return this.webService.get(`inventories/${inventoryId}/products`);
   }
 
