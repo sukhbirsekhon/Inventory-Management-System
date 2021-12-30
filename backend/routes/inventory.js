@@ -27,7 +27,7 @@ router.get('/inventories/:inventoryId', (req, res) => {
     .catch((error) => console.log(error));
 });
 
-// Update Inventory
+// UPDATE Inventory
 router.patch('/inventories/:inventoryId', async (req, res) => {
     try {
         const updatedInventory = await Inventory.findOneAndUpdate({ _inventoryId: req.params.inventoryId }, req.body, {
@@ -37,6 +37,13 @@ router.patch('/inventories/:inventoryId', async (req, res) => {
     } catch(e) {
         res.status(404).send(updatedInventory)
     }
+});
+
+// DELETE Inventory
+router.delete('/inventories/:inventoryId', (req, res) => {
+    Inventory.findOneAndDelete({ _inventoryId: req.params.inventoryId})
+    .then((inventories) => res.send(inventories))
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;

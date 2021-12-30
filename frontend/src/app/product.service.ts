@@ -38,7 +38,11 @@ export class ProductService {
   }
 
   updateInventory(inventoryId: string, inventory: Inventory) {
-    return this.webService.patch(`inventories/${inventoryId}`, inventory)
+    return this.webService.patch(`inventories/${inventoryId}`, inventory);
+  }
+
+  deleteInventory(inventoryId: string){
+    return this.webService.delete(`inventories/${inventoryId}`);
   }
 
   // PRODUCT
@@ -62,5 +66,9 @@ export class ProductService {
 
   updateProduct(inventoryId: string, productId: string, product: Product) {
     return this.webService.patch(`inventories/${inventoryId}/product/${productId}`, product)
+  }
+
+  deleteProduct(inventoryId: string, productId: string) {
+    return this.webService.delete(`inventories/${inventoryId}/product/${productId}`);
   }
 }
