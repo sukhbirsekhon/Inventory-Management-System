@@ -55,9 +55,9 @@ export class ProductService {
   }
 
   createProduct(inventoryId: string, productName: string, productBrand: string, productDesc: string,
-    productSizeUnit: string, productSize: string, productFavorite: boolean, productUniqueId: string) {
+    productSizeUnit: string, productSize: string, productFavorite: boolean, productUniqueId: string, productImage: string) {
     return this.webService.post(`inventories/${inventoryId}/products`, { productName, productBrand, productDesc,
-      productSizeUnit, productSize, productFavorite, productUniqueId });
+      productSizeUnit, productSize, productFavorite, productUniqueId, productImage });
   }
 
   findProductById(inventoryId: string, productId: string) {

@@ -41,6 +41,11 @@ const ProductSchema = new mongoose.Schema({
         minlength: 3,
         required: true
     },
+    productImage: {
+        type: String,
+        trim: true,
+        minlength: 1,
+    },
     _inventoryId: {
         type: mongoose.Types.ObjectId,
         required: true

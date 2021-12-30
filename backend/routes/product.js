@@ -27,6 +27,7 @@ router.post('/inventories/:inventoryId/products', (req, res) => {
         'productSize': req.body.productSize,
         'productFavorite': req.body.productFavorite,
         'productUniqueId': req.body.productUniqueId,
+        'productImage': req.body.productImage,
         '_inventoryId': req.params.inventoryId }))
         .save()
         .then((product) => res.send(product))
