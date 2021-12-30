@@ -25,4 +25,12 @@ export class WebService {
   post(uri: string, payload: Object) {
     return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
   }
+
+  patch(uri: string, payload: object) {
+    return this.http.patch(`${this.ROOT_URL}/${uri}`, payload);
+  }
+
+  delete(uri: string) {
+    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  }
 }

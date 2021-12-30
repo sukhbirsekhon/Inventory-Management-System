@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { WebService } from './web.service';
+import Inventory from './models/inventory';
+import Product from './models/product';
+import User from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +11,7 @@ export class ProductService {
 
   constructor(private webService: WebService) { }
 
+  // USERS
   getUsers() {
     return this.webService.get('users');
   }
@@ -20,6 +24,7 @@ export class ProductService {
     return this.webService.get(`users/${userId}`);
   }
 
+  // INVENTORY
   getInventories() {
     return this.webService.get('inventories');
   }
@@ -32,6 +37,11 @@ export class ProductService {
     return this.webService.get(`inventories/${inventoryId}`);
   }
 
+  updateInventory(inventoryId: string, inventory: Inventory) {
+    return this.webService.patch(`inventories/${inventoryId}`, inventory)
+  }
+
+  // PRODUCT
   getProducts() {
     return this.webService.get(`products`);
   }
@@ -48,5 +58,9 @@ export class ProductService {
 
   findProductById(inventoryId: string, productId: string) {
     return this.webService.get(`inventories/${inventoryId}/product/${productId}`);
+  }
+
+  updateProduct(inventoryId: string, productId: string, product: Product) {
+    return this.webService.patch(`inventories/${inventoryId}/product/${productId}`, product)
   }
 }
