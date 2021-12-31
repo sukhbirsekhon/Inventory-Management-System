@@ -22,5 +22,6 @@ app.use((req, res, next) => {
 app.use(require('./routes/inventory'));
 app.use(require('./routes/product'));
 app.use(require('./routes/user'));
+app.use(require('./routes/alert'));
 
 app.listen(port, () => console.log("Server Connected on port " + port));
