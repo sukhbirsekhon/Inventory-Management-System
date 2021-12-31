@@ -3,7 +3,11 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import Inventory from 'src/app/models/inventory';
 import Product from 'src/app/models/product';
 import User from 'src/app/models/user';
-import { ProductService } from 'src/app/product.service';
+import Alert from 'src/app/models/alert';
+import { AlertService } from 'src/services/alert.service';
+import { InventoryService } from 'src/services/inventory.service';
+import { ProductService } from 'src/services/product.service';
+import { UserService } from 'src/services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,14 +19,18 @@ export class DashboardComponent implements OnInit {
   inventories: Inventory[] = [];
   products: Product[] = [];
   users: User[] = [];
+  alerts: Alert[] = [];
   inventoryId: string;
 
   constructor(private productService: ProductService,
+    private inventoryService: InventoryService,
+    private userService: UserService,
+    private alertService: AlertService,
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.productService.getInventories()
+    this.inventoryService.getInventories()
     .subscribe((inventories) => this.inventories = inventories as Inventory[]);
 
     this.productService.getProducts()
@@ -35,9 +43,11 @@ export class DashboardComponent implements OnInit {
     //       .subscribe((products) => this.products = products as Product[]);
     // });
 
-    this.productService.getUsers()
+    this.userService.getUsers()
     .subscribe((users) => this.users = users as User[]);
 
+    this.alertService.getAlerts()
+    .subscribe((alerts) => this.alerts = alerts as Alert[]);
     }
 
 }

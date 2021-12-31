@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { WebService } from './web.service';
-import Inventory from './models/inventory';
-import Product from './models/product';
-import User from './models/user';
+import Inventory from '../app/models/inventory';
+import Product from '../app/models/product';
+import User from '../app/models/user';
+import Alert from '../app/models/alert';
 
 @Injectable({
   providedIn: 'root'
@@ -11,41 +12,6 @@ export class ProductService {
 
   constructor(private webService: WebService) { }
 
-  // USERS
-  getUsers() {
-    return this.webService.get('users');
-  }
-
-  createUsers(username: string, email: string, password: string) {
-    return this.webService.post('users', { username, email, password });
-  }
-
-  findUserById(userId: string) {
-    return this.webService.get(`users/${userId}`);
-  }
-
-  // INVENTORY
-  getInventories() {
-    return this.webService.get('inventories');
-  }
-
-  createInventory(inventoryName: string, inventoryDesc: string) {
-    return this.webService.post('inventories', { inventoryName, inventoryDesc });
-  }
-
-  findInventoryById(inventoryId: string) {
-    return this.webService.get(`inventories/${inventoryId}`);
-  }
-
-  updateInventory(inventoryId: string, inventory: Inventory) {
-    return this.webService.patch(`inventories/${inventoryId}`, inventory);
-  }
-
-  deleteInventory(inventoryId: string){
-    return this.webService.delete(`inventories/${inventoryId}`);
-  }
-
-  // PRODUCT
   getProducts() {
     return this.webService.get(`products`);
   }

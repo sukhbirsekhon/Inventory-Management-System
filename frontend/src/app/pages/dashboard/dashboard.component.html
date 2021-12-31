@@ -30,4 +30,16 @@
 </div>
 <br/>
 
+<p>Alert List:</p>
+<div class="list-menu">
+    <a href="#" class="list-menu-item" *ngFor="let alert of alerts">
+        <ul class="list-group">
+            <li class="list-group-item">Inventory Id: <b>{{ alert._inventoryId }}</b> | Product Id: <b>{{ alert._productId }}</b>
+                | Low Quantity: <b>{{ alert.lowQuantity }}</b> | High Quantity: <b>{{ alert.highQuantity }}</b>
+                | Low Quantity Percentage: <b>{{ alert.lowQuantityPercentage }}</b> | High Quantity Percentage: <b>{{ alert.highQuantityPercentage }}</b></li>
+        </ul>
+    </a>
+</div>
+<br/>
+
 <button class="btn btn-primary btn-rounded-corners">Add Products</button>
