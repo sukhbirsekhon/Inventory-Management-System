@@ -54,8 +54,8 @@ router.patch('/inventories/:inventoryId/products/:productId', async (req, res) =
 });
 
 // DELETE Product
-router.delete('/inventories/:inventoryId/products/:productId', (req, res) => {
-    Product.findOneAndDelete({ _inventoryId: req.params.inventoryId, _id: req.params.productId })
+router.delete('/products/:productId', (req, res) => {
+    Product.findOneAndDelete({_id: req.params.productId })
     .then((products) => res.send(products))
     .catch((error) => console.log(error));
 });

@@ -10,8 +10,7 @@ const ProductSchema = new mongoose.Schema({
     productBrand: {
         type: String,
         trim: true,
-        minlength: 2,
-        required: true
+        minlength: 2
     },
     productDesc: {
         type: String,
@@ -21,14 +20,12 @@ const ProductSchema = new mongoose.Schema({
     productSizeUnit: {
         type: String,
         trim: true,
-        minlength: 1,
-        required: true
+        minlength: 1
     },
     productSize: {
         type: String,
         trim: true,
-        minlength: 1,
-        required: true
+        minlength: 1
     },
     productUniqueId: {
         type: String,
@@ -38,8 +35,7 @@ const ProductSchema = new mongoose.Schema({
     productFavorite: {
         type: Boolean,
         trim: true,
-        minlength: 3,
-        required: true
+        minlength: 3
     },
     productImage: {
         type: String,

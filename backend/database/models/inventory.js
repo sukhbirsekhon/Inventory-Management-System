@@ -10,8 +10,7 @@ const InventorySchema = new mongoose.Schema({
     inventoryDesc: {
         type: String, 
         trim: true, 
-        minlength: 3,
-        required: true
+        minlength: 3
     }
 });
 

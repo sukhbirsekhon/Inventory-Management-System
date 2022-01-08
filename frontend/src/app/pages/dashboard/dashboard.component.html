@@ -1,4 +1,71 @@
-<p>Users List:</p>
+<div ng-app="myApp" ng-controller="mainController">
+
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+          menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+          close
+      </mat-icon>
+  </button>
+  Inventory Management System
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+      <button mat-button class="menu-button">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+      </button>
+<!--
+      <mat-nav-list>
+        <mat-list-item *ngFor="let inventory of inventories">
+          {{ inventory.inventoryName }}
+        </mat-list-item>
+      </mat-nav-list> -->
+
+      <mat-list>
+        <ng-container *ngFor="let inventory of inventories">
+            <mat-list-item>{{inventory.inventoryName}}</mat-list-item>
+            <mat-list style="margin-left:30px;">
+                <div *ngFor="getSortedProducts(); let product of products3">
+                    <mat-list-item>{{ product.productName }}</mat-list-item>
+                </div>
+            </mat-list>
+        </ng-container>
+    </mat-list>
+    <!-- <div>
+    <input type="button" value="Call Function" (click)="getSortedProducts()">
+    </div>
+    <div>
+      <input type="button" value="Call product" (click)="yoyo()">
+      </div> -->
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+          Content goes here?
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+<script type="text/javascript">
+  var myApp = angular.module("myApp", []);
+
+  myApp.controller("mainController", function($scope, $window) {
+
+
+    $window.onload = getSortedProducts();
+
+
+  });
+
+
+</script>
+
+<!-- <p>Users List:</p>
 <div class="list-menu">
     <a href="#" class="list-menu-item" *ngFor="let user of users">
         <ul class="list-group">
@@ -42,4 +109,4 @@
 </div>
 <br/>
 
-<button class="btn btn-primary btn-rounded-corners">Add Products</button>
+<button class="btn btn-primary btn-rounded-corners">Add Products</button> -->
