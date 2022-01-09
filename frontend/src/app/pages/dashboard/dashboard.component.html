@@ -15,7 +15,10 @@
       <mat-list>
         <ng-container *ngFor="let inventory of inventories">
 
-            <mat-list-item>{{inventory.inventoryName}}</mat-list-item>
+            <button mat-button class="menu-button" >
+              <span>{{inventory.inventoryName}}</span>
+            </button>
+            <!-- <mat-list-item>{{inventory.inventoryName}}</mat-list-item> -->
             <mat-list style="margin-left:30px;">
                 <div *ngFor="let product of sortedProducts">
                     <mat-list-item *ngIf="inventory._id == product._inventoryId">{{ product.productName}}</mat-list-item>
