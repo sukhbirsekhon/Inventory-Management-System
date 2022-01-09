@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, Directive } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import Inventory from 'src/app/models/inventory';
 import Product from 'src/app/models/product';
@@ -20,6 +20,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit {
 
   @ViewChild(MatSidenav)
@@ -28,9 +29,8 @@ export class DashboardComponent implements OnInit {
   inventories: Inventory[] = [];
   inventoryIds: Inventory[] = [];
   products: Product[] = [];
-  products2: Product[] = [];
-  products3: Product[] = [];
-  products4: Product[] = [];
+  tempProducts: Product[] = [];
+  sortedProducts: Product[] = [];
   users: User[] = [];
   alerts: Alert[] = [];
   inventoryId: string;
@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
     private observer: BreakpointObserver) { }
 
   ngOnInit(): void {
+
     this.inventoryService.getInventories()
     .subscribe((inventories) => this.inventories = inventories as Inventory[]);
 
@@ -65,29 +66,19 @@ export class DashboardComponent implements OnInit {
     .subscribe((alerts) => this.alerts = alerts as Alert[]);
   }
 
- /**
-  * name
-  */
- getSortedProducts() {
-  this.products3 = []
+ getSortedProductsForSideNav() {
+  this.sortedProducts = []
 
   return new Promise(resolve => {
     this.inventories.forEach( async (value) => {
-      this.products2 = []
+      this.tempProducts = []
       await this.productService.getProductsByInventoryId(value._id).forEach((vv) => {
-        this.products2= vv as Product[];
-        this.products3.push.apply(this.products3, this.products2)
+        this.tempProducts= vv as Product[];
+        this.sortedProducts.push.apply(this.sortedProducts, this.tempProducts)
       })
-      resolve(this.products3)
+      resolve(this.sortedProducts)
     })
   })
- }
-
-
- async yoyo() {
-   console.log(this.products3);
-  // this.getSortedProducts().then((some) => console.log(some)).catch(() => {
-  //   console.log('something didnt work')});
  }
 
   ngAfterViewInit() {

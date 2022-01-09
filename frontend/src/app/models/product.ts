@@ -8,5 +8,5 @@ export default class Product {
     productUniqueId: string;
     productFavorite: boolean;
     productImage: string;
-    inventoryId: string;
+    _inventoryId: string;
 }
